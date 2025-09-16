@@ -2,27 +2,134 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Agent-Ready Shopify</title>
-  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Agent-Ready Shopify — Make Your Store Visible to AI Shoppers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="72-hour Agent-Ready Setup for Shopify stores: structured data (JSON-LD), Merchant Center feed cleanup, agent-oriented FAQ & policies, and a before/after report.">
   <style>
-    body{font-family:system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;margin:0;background:#f8fafc;color:#0f172a}
-    .wrap{max-width:820px;margin:40px auto;padding:0 16px}
-    h1{font-size:36px;margin:0 0 8px}
-    .cta{display:inline-block;padding:10px 14px;background:#111827;color:#fff;text-decoration:none;border-radius:10px;margin-top:12px}
-    .card{background:#fff;border-radius:14px;padding:16px;margin:14px 0;box-shadow:0 8px 24px rgba(0,0,0,.07)}
+    /* ====== Minimal, clean, single-file styles ====== */
+    :root { --pad: 18px; --rad: 14px; --shadow: 0 10px 30px rgba(0,0,0,.07); }
+    * { box-sizing: border-box; }
+    body { margin: 0; font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif; color: #0f172a; background: #f8fafc; }
+    a { color: inherit; }
+    .wrap { max-width: 1000px; margin: 0 auto; padding: 0 16px 80px; }
+    .hero { text-align: center; padding: 64px 16px 28px; background: linear-gradient(180deg,#ffffff,#eef2ff); }
+    .hero h1 { margin: 14px 0 6px; font-size: 42px; letter-spacing: -0.02em; }
+    .sub { color: #475569; font-size: 18px; margin: 6px 0 18px; }
+    .cta { display: inline-block; padding: 12px 18px; background: #111827; color: #fff; text-decoration: none; border-radius: 10px; box-shadow: var(--shadow); }
+    .section { padding: 36px 0; }
+    h2 { font-size: 28px; margin: 0 0 14px; }
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; }
+    .card { background: #fff; border-radius: var(--rad); padding: var(--pad); box-shadow: var(--shadow); }
+    .list { line-height: 1.6; padding-left: 18px; }
+    .pricing { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 16px; }
+    .price { background: #f1f5f9; border-radius: var(--rad); padding: 20px; box-shadow: var(--shadow); }
+    .num { font-size: 30px; margin: 6px 0 12px; }
+    .book { text-align: center; }
+    footer { text-align: center; color: #64748b; padding: 30px 16px; }
+    .logo { width: 80px; height: 80px; margin: 0 auto 8px; display: block; opacity: .95; }
+    .muted { color: #64748b; font-size: 14px; }
+    .inline-note { font-size: 12px; color: #64748b; margin-top: 8px; }
+    ul li { margin-bottom: 6px; }
+    /* responsive niceties */
+    @media (max-width: 480px) {
+      .hero h1 { font-size: 34px; }
+      .num { font-size: 26px; }
+    }
   </style>
 </head>
 <body>
-  <div class="wrap">
+  <!-- Inline logo SVG so you don't need extra files -->
+  <header class="hero">
+    <svg class="logo" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Agent Ready Shopify">
+      <defs>
+        <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#6366f1"/>
+          <stop offset="100%" stop-color="#0ea5e9"/>
+        </linearGradient>
+      </defs>
+      <rect width="160" height="160" rx="28" fill="url(#g)"/>
+      <g fill="#fff" transform="translate(22,26)">
+        <circle cx="58" cy="54" r="34" fill="none" stroke="#fff" stroke-width="8"/>
+        <path d="M58 12v12M58 84v12M22 54H10M106 54h-12M88 24l-8 8M28 24l8 8M88 84l-8-8M28 84l8-8" stroke="#fff" stroke-width="8" stroke-linecap="round"/>
+      </g>
+    </svg>
     <h1>Agent-Ready Shopify™</h1>
-    <p>Make your store visible to AI shoppers — and purchasable by agents.</p>
+    <p class="sub">Make your store visible to AI shoppers — and purchasable by agents.</p>
+    <a class="cta" href="#book">Reserve a Slot →</a>
+  </header>
 
-    <div class="card">
+  <main class="wrap">
+    <section class="section">
+      <h2>Why this matters now</h2>
+      <ul class="list">
+        <li><strong>AI shopping assistants are live:</strong> Amazon Rufus, Google experiences, Perplexity “Buy with Pro,” and in-chat checkout pilots.</li>
+        <li>Agents rely on <strong>structured data</strong> + clean Merchant Center feeds to understand your products.</li>
+        <li>If your data isn’t machine-readable, you’re invisible to agentic discovery and checkout.</li>
+      </ul>
+    </section>
+
+    <section class="section">
+      <h2>What you get in 72 hours</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>Product Schema</h3>
+          <p>Schema.org <code>Product</code> markup with price, availability, brand, SKU/GTIN/MPN, and images.</p>
+        </div>
+        <div class="card">
+          <h3>Feed Cleanup</h3>
+          <p>Google Merchant Center feed validation: IDs, titles, images, shipping/handling times, and policy links.</p>
+        </div>
+        <div class="card">
+          <h3>Agent Q&amp;A</h3>
+          <p>Plain-language FAQs (shipping, returns, warranty, sizing) optimized for agent retrieval.</p>
+        </div>
+        <div class="card">
+          <h3>Spec Tables</h3>
+          <p>Human + machine readable spec tables for top SKUs (copy + HTML templates).</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Simple pricing</h2>
+      <div class="pricing">
+        <div class="price">
+          <h3>Agent-Ready Setup</h3>
+          <p class="num">$1,500 one-time</p>
+          <ul class="list">
+            <li>Up to 50 SKUs templated</li>
+            <li>1× feed cleanup &amp; resubmit</li>
+            <li>Agent Q&amp;A page creation</li>
+            <li>Before/after report</li>
+          </ul>
+        </div>
+        <div class="price">
+          <h3>Upkeep</h3>
+          <p class="num">$300 / month</p>
+          <ul class="list">
+            <li>Feed health monitoring</li>
+            <li>New SKU schema templating</li>
+            <li>Schema/FAQ edits</li>
+            <li>Quarterly report</li>
+          </ul>
+        </div>
+      </div>
+      <p class="inline-note">Guarantee: If there’s no impressions uplift or feed error reduction in 30 days, month-2 maintenance is free.</p>
+    </section>
+
+    <section id="book" class="section book">
       <h2>Book your setup</h2>
-      <p>Email: <strong>gsean8608@gmail.com.com</strong><br>
-         Phone: <strong>(440) 813-7143</strong></p>
-      <a class="cta" href="https://buy.stripe.com/REPLACE_WITH_YOUR_LINK">Reserve a Slot</a>
-    </div>
-  </div>
+      <p>Drop a deposit to reserve your 72-hour setup slot.</p>
+      <p class="muted">Email: <strong>gsean8608@gmail.com.com</strong> • Phone: <strong>(440)813-7143</strong></p>
+      <!-- Replace ONLY the URL below with your real Stripe Payment Link (must start with https://buy.stripe.com/...) -->
+      <p><a class="cta" href="https://buy.stripe.com/YOUR_REAL_CODE" target="_blank" rel="noopener">Reserve a Slot</a></p>
+
+     
+    </section>
+  </main>
+
+  <footer>
+    <p>© 2025 Agent-Ready Shopify™ • Not affiliated with Shopify, Google, Amazon, or Perplexity.</p>
+  </footer>
 </body>
 </html>
